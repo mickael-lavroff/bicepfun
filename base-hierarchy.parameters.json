@@ -1,0 +1,211 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "canadacentral"
+        },
+        "billingScope":{
+            "value": "/providers/Microsoft.Billing/billingAccounts/xxxxxxx/enrollmentAccounts/xxxxxx"
+        },
+        "toplevelPrefix": {
+            "value": "sbx"
+        },
+        "managementGroups": {
+            "value": [
+                {
+                    "name": "mg-sbx-01",
+                    "displayName": "Sandbox Shared 01",
+                    "parentMgmtGroupName": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx"
+                },
+                {
+                    "name": "mg-sbx-dev-01",
+                    "displayName": "Sandbox dev 01",
+                    "parentMgmtGroupName": "mg-sbx-01"
+                },
+                {
+                    "name": "mg-sbx-qa-01",
+                    "displayName": "Sandbox qa 01",
+                    "parentMgmtGroupName": "mg-sbx-01"
+                },
+                {
+                    "name": "mg-sbx-prod-01",
+                    "displayName": "Sandbox prod 01",
+                    "parentMgmtGroupName": "mg-sbx-01"
+                }
+            ]
+        },
+        "subscriptions": {
+            "value": [
+                {
+                    "name": "shared-01",
+                    "parentMgmtGroupName": "mg-sbx-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-01"
+                },
+                {
+                    "name": "domo-dev-01",
+                    "parentMgmtGroupName": "mg-sbx-dev-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-domo-dev-01"
+                },
+                {
+                    "name": "domo-qa-01",
+                    "parentMgmtGroupName": "mg-sbx-qa-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-domo-qa-01"
+                },
+                {
+                    "name": "domo-prod-01",
+                    "parentMgmtGroupName": "mg-sbx-prod-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-domo-prod-01"
+                },
+                {
+                    "name": "immo-dev-01",
+                    "parentMgmtGroupName": "mg-sbx-dev-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-immo-dev-01"
+                },
+                {
+                    "name": "immo-qa-01",
+                    "parentMgmtGroupName": "mg-sbx-qa-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-immo-qa-01"
+                },
+                {
+                    "name": "immo-prod-01",
+                    "parentMgmtGroupName": "mg-sbx-prod-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-immo-prod-01"
+                },
+                {
+                    "name": "drms-dev-01",
+                    "parentMgmtGroupName": "mg-sbx-dev-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-drms-dev-01"
+                },
+                {
+                    "name": "drms-qa-01",
+                    "parentMgmtGroupName": "mg-sbx-qa-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-drms-qa-01"
+                },
+                {
+                    "name": "drms-prod-01",
+                    "parentMgmtGroupName": "mg-sbx-prod-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-drms-prod-01"
+                },
+                {
+                    "name": "vpp-dev-01",
+                    "parentMgmtGroupName": "mg-sbx-dev-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-vpp-dev-01"
+                },
+                {
+                    "name": "vpp-qa-01",
+                    "parentMgmtGroupName": "mg-sbx-qa-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-vpp-qa-01"
+                },
+                {
+                    "name": "vpp-prod-01",
+                    "parentMgmtGroupName": "mg-sbx-prod-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-vpp-prod-01"
+                },
+                {
+                    "name": "data-dev-01",
+                    "parentMgmtGroupName": "mg-sbx-dev-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-data-dev-01"
+                },
+                {
+                    "name": "data-qa-01",
+                    "parentMgmtGroupName": "mg-sbx-qa-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-data-qa-01"
+                },
+                {
+                    "name": "data-prod-01",
+                    "parentMgmtGroupName": "mg-sbx-prod-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-data-prod-01"
+                },
+                {
+                    "name": "system-dev-01",
+                    "parentMgmtGroupName": "mg-sbx-dev-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-system-dev-01"
+                },
+                {
+                    "name": "system-qa-01",
+                    "parentMgmtGroupName": "mg-sbx-qa-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-system-qa-01"
+                },
+                {
+                    "name": "system-prod-01",
+                    "parentMgmtGroupName": "mg-sbx-prod-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-system-prod-01"
+                },
+                {
+                    "name": "itsec-dev-01",
+                    "parentMgmtGroupName": "mg-sbx-dev-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-itsec-dev-01"
+                },
+                {
+                    "name": "itsec-qa-01",
+                    "parentMgmtGroupName": "mg-sbx-qa-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-itsec-qa-01"
+                },
+                {
+                    "name": "itsec-prod-01",
+                    "parentMgmtGroupName": "mg-sbx-prod-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-itsec-prod-01"
+                },
+                {
+                    "name": "operation-dev-01",
+                    "parentMgmtGroupName": "mg-sbx-dev-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-operation-dev-01"
+                },
+                {
+                    "name": "operation-qa-01",
+                    "parentMgmtGroupName": "mg-sbx-qa-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-operation-qa-01"
+                },
+                {
+                    "name": "operation-prod-01",
+                    "parentMgmtGroupName": "mg-sbx-prod-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-operation-prod-01"
+                },
+                {
+                    "name": "common-dev-01",
+                    "parentMgmtGroupName": "mg-sbx-dev-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-common-dev-01"
+                },
+                {
+                    "name": "common-qa-01",
+                    "parentMgmtGroupName": "mg-sbx-qa-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-common-qa-01"
+                },
+                {
+                    "name": "common-prod-01",
+                    "parentMgmtGroupName": "mg-sbx-prod-01",
+                    "workloadType": "Production",
+                    "sharedResGroupName":"rg-shared-sbx-common-prod-01"
+                }
+            ]
+        }
+    }
+}
